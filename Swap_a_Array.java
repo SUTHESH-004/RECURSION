@@ -10,13 +10,10 @@ public class Swap_a_Array {
     static int[] reverse(int arr[],int l,int r)
     {
         if(l>=r)
-        {
             return arr;
-        }
         int temp = arr[l];
         arr[l]=arr[r];
         arr[r]= temp;
-
         return reverse(arr,l+1,r-1);
     }
 }
