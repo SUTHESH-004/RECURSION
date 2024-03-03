@@ -7,7 +7,6 @@ public class Swap_a_Array {
         System.out.println(Arrays.toString(arr));
 
     }
-
     static int[] reverse(int arr[], int l, int r) {
         if (l >= r)
             return arr;
