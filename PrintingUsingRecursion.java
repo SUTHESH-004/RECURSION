@@ -5,24 +5,41 @@ public class PrintingUsingRecursion {
         Scanner sc = new Scanner(System.in);
         int StartingNumber = sc.nextInt();
         int EndingNumber = sc.nextInt();
-        int increment = sc.nextInt();
-        f(StartingNumber, EndingNumber, increment);
-        freverse(StartingNumber, EndingNumber, increment);
+        f(StartingNumber, EndingNumber);
+        System.out.println();
+        freverse(StartingNumber, EndingNumber);
+        System.out.println();
+        fb(EndingNumber);
+        System.out.println();
+        fbreverse(EndingNumber);
         sc.close();
     }
 
-    public static void f(int StartingNumber, int EndingNumber, int increment) {
+    static void f(int StartingNumber, int EndingNumber) {
         if (StartingNumber > EndingNumber)
             return;
-        System.out.print(StartingNumber);
-        f(StartingNumber + 1, EndingNumber, increment);
+        System.out.print(" " + StartingNumber + " ");
+        f(StartingNumber + 1, EndingNumber);
     }
 
-    public static void freverse(int StartingNumber, int EndingNumber, int increment) {
+    static void freverse(int StartingNumber, int EndingNumber) {
         if (StartingNumber > EndingNumber)
             return;
-        freverse(StartingNumber + 1, EndingNumber, increment);
+        freverse(StartingNumber + 1, EndingNumber);
         System.out.print(" " + StartingNumber + " ");
     }
 
+    static void fb(int EndingNumber) {
+        if (EndingNumber < 1)
+            return;
+        fb(EndingNumber - 1);
+        System.out.print(" " + EndingNumber + " ");
+    }
+
+    static void fbreverse(int EndingNumber) {
+        if (EndingNumber < 1)
+            return;
+        System.out.print(" " + EndingNumber + " ");
+        fbreverse(EndingNumber - 1);
+    }
 }
